@@ -23,7 +23,7 @@ public class Videogame {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idVideogame;
+    private Long id;
 
     @Column(unique = true, nullable = false)
     private String nombreVideogame;
