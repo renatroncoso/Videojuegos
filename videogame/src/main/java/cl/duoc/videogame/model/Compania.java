@@ -7,14 +7,18 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.Builder;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
-@Table(name="compania")
-@Data
+@Table(name="companias")
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 public class Compania {
     
     @Id
@@ -23,4 +27,7 @@ public class Compania {
 
     @Column(unique = true, nullable = false)
     private String nombreCompania;
+
+    @Column(nullable = false)
+    private String country;
 }
