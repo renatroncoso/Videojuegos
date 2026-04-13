@@ -17,13 +17,14 @@ public class Compania {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idCompania;
+    private Long id;
 
     @Column(unique = true, nullable = false)
     private String nombreCompania;
 
     @Column(nullable = false)
     private String country;
+
 
     @OneToMany(mappedBy = "compania")
     private Set<Consola> consolas= new HashSet<>();
