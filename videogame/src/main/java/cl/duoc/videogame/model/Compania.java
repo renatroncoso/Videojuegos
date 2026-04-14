@@ -26,6 +26,22 @@ public class Compania {
     private String country;
 
 
+    @Builder.Default
     @OneToMany(mappedBy = "compania")
     private Set<Consola> consolas= new HashSet<>();
+
+    @Override
+    public boolean equals(Object o){
+        if(this == o) return true;
+        if(!(o instanceof Compania)) return false;
+
+        Compania other = (Compania) o;
+        return id != null && id.equals(other.getId());
+    }
+
+
+    @Override
+    public int hashCode(){
+        return 31;
+    }
 }
