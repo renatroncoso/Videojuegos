@@ -3,12 +3,15 @@ package cl.duoc.videogame.service;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import org.springframework.stereotype.Service;
+
 import cl.duoc.videogame.dto.ConsolaDTO;
 import cl.duoc.videogame.model.Compania;
 import cl.duoc.videogame.model.Consola;
 import cl.duoc.videogame.repository.CompaniaRepository;
 import cl.duoc.videogame.repository.ConsolaRepository;
 
+@Service
 public class ConsolaService {
     private final ConsolaRepository consolaRepository;
     private final CompaniaRepository companiaRepository;

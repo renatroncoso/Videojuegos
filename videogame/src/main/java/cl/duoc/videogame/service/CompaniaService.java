@@ -2,10 +2,14 @@ package cl.duoc.videogame.service;
 
 import java.util.List;
 import java.util.stream.Collectors;
+
+import org.springframework.stereotype.Service;
+
 import cl.duoc.videogame.dto.CompaniaDTO;
 import cl.duoc.videogame.model.Compania;
 import cl.duoc.videogame.repository.CompaniaRepository;
 
+@Service
 public class CompaniaService {
     private final CompaniaRepository companiaRepository;
 
