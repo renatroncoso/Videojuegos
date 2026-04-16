@@ -39,4 +39,17 @@ public class CompaniaService {
         return companiaDTO;
     }
     
+    public CompaniaDTO findById(Long id){
+        Compania compania = companiaRepository.findById(id)
+            .orElseThrow(()-> new RuntimeException("compania no encontrada"));
+        return new CompaniaDTO(compania.getId(),compania.getNombreCompania(),compania.getCountry());
+    }
+    
+    public boolean deleteCompania(Long id){
+        if(companiaRepository.existsById(id)){
+            companiaRepository.deleteById(id);
+            return true;
+        }
+        return false;
+    }
 }
